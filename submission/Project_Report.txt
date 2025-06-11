@@ -1,0 +1,63 @@
+ XKCD Email Verification System – Project Report
+💠 Purpose of the Project:
+-To build a PHP-based system where users can:
+
+-Register using their email.
+
+-Verify the email with a code.
+
+-Receive a random XKCD comic every 24 hours after verification.
+
+-Unsubscribe any time.
+
+💠 Technologies Used:
+-PHP – Server-side scripting
+
+-JSON – To store verification codes and subscribers
+
+-CRON / Task Scheduler – To send daily comics automatically
+
+-Git & GitHub – Version control and submission
+
+-XKCD API – To fetch random comics
+
+💠 How the Project Works:
+-User Registration:
+
+-User enters email on index.php.
+
+-System sends a 6-digit verification code to the email.
+
+-Code is stored in verification_codes.json.
+
+💠Verification:
+
+-User enters the received code to verify.
+
+-Verified emails are saved in subscribers.json.
+
+-XKCD Comic Delivery:
+
+-A scheduled task runs cron.php every 24 hours.
+
+-It fetches a random XKCD comic via the XKCD API.
+
+-Formats it into HTML email and sends it to all verified users.
+
+-Each log is saved in cron_log.txt.
+
+💠Unsubscribe:
+
+-Users can unsubscribe via a special link included in the email.
+
+💠 How I Verified it Works:
+-Ran index.php → Entered email → Received and entered verification code 
+
+-Verified entry was saved in subscribers.json 
+
+-Manually ran cron.php → Email with comic sent 
+
+-Verified cron_log.txt was updated 
+
+-Used Git & GitHub properly, created a feature branch and raised a pull request 
+
